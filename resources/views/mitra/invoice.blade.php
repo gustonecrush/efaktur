@@ -1,6 +1,6 @@
 @extends('mitra.layouts.main', [
-    'title' => 'Manajemen Data Invoice CV Fajar Teknika',
-    'active' => 'Invoice',
+    'title' => 'Manajemen Data Faktur CV Sayovi Karyatama',
+    'active' => 'Faktur',
 ])
 
 @section('content')
@@ -13,7 +13,7 @@
                     </div>
                     <div class="hidden lg:flex">
                         <button type="button" class="appearance-none py-4 text-blue-dark border-b border-primary mr-6">
-                            Rekapitulasi &middot; Invoice Pemesanan
+                            Rekapitulasi &middot; Faktur Pemesanan
                         </button>
 
                     </div>
@@ -75,7 +75,7 @@
                             <span class="text-5xl">{{ $totalPemesanans }}</span>
                         </div>
                         <div class="text-sm uppercase text-grey tracking-wide">
-                            Total Invoice
+                            Total Faktur
                         </div>
                     </div>
                 </div>
@@ -89,9 +89,9 @@
                         <div class="flex justify-between px-6 -mb-px items-center gap-2">
                             <h3
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
-                                <i class='bx bxl-dropbox text-3xl'></i><span class="pf pf-invoice">Invoice</span>
+                                <i class='bx bxl-dropbox text-3xl'></i><span class="pf pf-invoice">Faktur</span>
                                 Pemesanan CV
-                                Fajar Teknika
+                                Sayovi Karyatama
                             </h3>
 
                         </div>
@@ -125,7 +125,7 @@
                                     <td class="px-6 py-4 text-center flex gap-2">
                                         <a href="/mitra/invoice/{{ $pemesanan->id }}"
                                             class="font-medium text-gray-500 dark:text-gray-500 hover:underline">
-                                            <i class='bx bxl-dropbox text-sm'></i>Invoice
+                                            <i class='bx bxl-dropbox text-sm'></i>Faktur
                                         </a>
 
 

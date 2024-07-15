@@ -1,5 +1,5 @@
 @extends('admin.layouts.main', [
-    'title' => 'Manajemen Data Nota Jalan CV Fajar Teknika',
+    'title' => 'Manajemen Data Nota Jalan CV Sayovi Karyatama',
     'active' => 'Nota Jalan',
 ])
 
@@ -13,7 +13,7 @@
                     </div>
                     <div class="hidden lg:flex">
                         <button type="button" class="appearance-none py-4 text-blue-dark border-b border-primary mr-6">
-                            Rekapitulasi &middot; Nota Jalan Pemesanan
+                            Rekapitulasi &middot; Faktur Keluar Pemesanan
                         </button>
 
                     </div>
@@ -75,7 +75,7 @@
                             <span class="text-5xl">{{ $totalPemesanans }}</span>
                         </div>
                         <div class="text-sm uppercase text-grey tracking-wide">
-                            Total Nota
+                            Total Faktur
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
                                 <i class='bx bxl-dropbox text-3xl'></i><span class="pf pf-invoice">Invoice</span>
                                 Pemesanan CV
-                                Fajar Teknika
+                                Sayovi Karyatama
                             </h3>
 
                         </div>

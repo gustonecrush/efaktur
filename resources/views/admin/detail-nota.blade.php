@@ -1,5 +1,5 @@
 @extends('admin.layouts.main', [
-    'title' => 'Detail Nota Jalan CV Fajar Teknika',
+    'title' => 'Detail Nota Jalan CV Sayovi Karyatama',
     'active' => 'Nota Jalan',
 ])
 

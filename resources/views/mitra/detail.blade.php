@@ -1,5 +1,5 @@
 @extends('mitra.layouts.main', [
-    'title' => 'Detail Pemesanan CV Fajar Teknika',
+    'title' => 'Detail Pemesanan CV Sayovi Karyatama',
     'active' => 'Pemesanan',
 ])
 
@@ -57,7 +57,7 @@
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
                                 <i class='bx bxl-dropbox text-3xl'></i>Data
                                 Barang CV
-                                Fajar Teknika
+                                Sayovi Karyatama
                             </h3>
                             <div class="flex">
 
@@ -259,7 +259,7 @@
                         <section class="mb-6">
                             <div class="flex justify-between">
                                 <div class="w-1/2">
-                                    <p class="text-sm text-gray-800 font-bold">TO: CV Fajar Teknika</p>
+                                    <p class="text-sm text-gray-800 font-bold">TO: CV Sayovi Karyatama</p>
                                     <p class="text-sm text-gray-600">Jl. Lingga Raya Samping PLN Tanjungenim</p>
                                     <p class="text-sm text-gray-600">Tanjung Enim, Muara Enim, Sumsel</p>
                                     <p class="text-sm text-gray-600">HP: 082374069762</p>
@@ -486,7 +486,7 @@
                         }
                     }).then(response => response.json()).then(data => {
                         Toastify({
-                            text: "Successfully order to CV Fajar Teknika",
+                            text: "Successfully order to CV Sayovi Karyatama",
                             duration: 3000,
                             gravity: "top",
                             position: "right",

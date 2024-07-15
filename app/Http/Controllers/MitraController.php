@@ -136,7 +136,7 @@ class MitraController extends Controller
 
         if (Auth::guard('mitra')->attempt($credentials)) {
             $request->session()->regenerate();
-            toast('Successfully logged in. Welcome to Dashboard Mitra CV Fajar Teknika.', 'success',);
+            toast('Successfully logged in. Welcome to Dashboard E-Faktur CV Sayovi Karyatama.', 'success',);
             return redirect()->route('mitra.pemesananPage');
         }
 
@@ -150,7 +150,7 @@ class MitraController extends Controller
         Auth::guard('mitra')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        toast('Successfully logged out. Thanks has used Dashboard Mitra CV Fajar Teknika.', 'success',);
+        toast('Successfully logged out. Thanks has used Dashboard E-Faktur CV Sayovi Karyatama.', 'success',);
 
         return redirect()->route('mitra.loginPage');
     }

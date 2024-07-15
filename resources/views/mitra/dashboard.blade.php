@@ -1,5 +1,5 @@
 @extends('mitra.layouts.main', [
-    'title' => 'Dashboard Mitra CV Fajar Teknika',
+    'title' => 'Dashboard Mitra CV Sayovi Karyatama',
     'active' => 'Dashboard',
 ])
 

@@ -1,5 +1,5 @@
 @extends('layouts.main', [
-    'title' => 'Login Mitra CV Fajar Teknika',
+    'title' => 'Login Mitra CV Sayovi Karyatama',
 ])
 
 @section('content')
@@ -9,7 +9,7 @@
                 <h2
                     class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">
-                    Login Admin CV Fajar Teknika</h2>
+                    Login Admin E-Faktur CV Sayovi Karyatama</h2>
                 <div class="mt-12">
                     <form method="POST" action="{{ route('admin.login') }}">
                         @csrf

@@ -1,6 +1,6 @@
 @extends('mitra.layouts.main', [
-    'title' => 'Detail Invoice CV Fajar Teknika',
-    'active' => 'Invoice',
+    'title' => 'Detail Faktur CV Sayovi Karyatama',
+    'active' => 'Faktur',
 ])
 
 @section('content')
@@ -15,7 +15,7 @@
                         <button type="button" class="appearance-none py-4 text-blue-dark border-b border-primary mr-6">
                             <a href="{{ route('admin.invoicePage') }}">{{ $pemesanans->no_po }}</a> &middot;
                             Rekapitulasi
-                            &middot; Invoice Pemesanan
+                            &middot; Faktur Pemesanan
                         </button>
 
                     </div>
@@ -55,7 +55,7 @@
                 <div class="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
                     <div class="">
                         <button id="export-btn" class="bg-blue-500 text-white px-4 py-2 rounded">
-                            Send and Save Invoice
+                            Send and Save Faktur
                         </button>
                     </div>
                     <div id="purchase-order" class="max-w-5xl mx-auto p-6 bg-white shadow-md mt-10">
@@ -72,7 +72,7 @@
                         <section class="mb-6">
                             <div class="flex justify-between">
                                 <div class="w-1/2">
-                                    <p class="text-sm text-gray-800 font-bold">TO: CV Fajar Teknika</p>
+                                    <p class="text-sm text-gray-800 font-bold">TO: CV Sayovi Karyatama</p>
                                     <p class="text-sm text-gray-600">Jl. Lingga Raya Samping PLN Tanjungenim</p>
                                     <p class="text-sm text-gray-600">Tanjung Enim, Muara Enim, Sumsel</p>
                                     <p class="text-sm text-gray-600">HP: 082374069762</p>

@@ -1,5 +1,5 @@
 @extends('admin.layouts.main', [
-    'title' => 'Manajemen Data Barang CV Fajar Teknika',
+    'title' => 'Manajemen Data Barang CV Sayovi Karyatama',
     'active' => 'Barang',
 ])
 
@@ -101,7 +101,7 @@
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
                                 <i class='bx bxl-dropbox text-3xl'></i>Data
                                 Barang CV
-                                Fajar Teknika
+                                Sayovi Karyatama
                             </h3>
                             <div class="flex">
 

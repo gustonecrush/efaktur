@@ -1,5 +1,5 @@
 @extends('layouts.main', [
-    'title' => 'Register Mitra CV Fajar Teknika',
+    'title' => 'Register Mitra CV Sayovi Karyatama',
 ])
 
 @section('content')

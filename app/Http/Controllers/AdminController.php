@@ -97,7 +97,7 @@ class AdminController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            toast('Successfully logged in. Welcome to Dashboard Admin CV Fajar Teknika.', 'success',);
+            toast('Successfully logged in. Welcome to Dashboard E-Faktur CV Sayovi Karyatama.', 'success',);
             return redirect()->route('admin.pemesananPage');
         }
 
@@ -112,7 +112,7 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        toast('Successfully logged out. Thanks has used Dashboard Admin CV Fajar Teknika.', 'success',);
+        toast('Successfully logged out. Thanks has used Dashboard E-Faktur CV Sayovi Karyatama.', 'success',);
 
         return redirect()->route('admin.login');
     }

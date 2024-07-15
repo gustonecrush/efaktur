@@ -1,5 +1,5 @@
 @extends('admin.layouts.main', [
-    'title' => 'Dashboard Admin CV Fajar Teknika',
+    'title' => 'Dashboard E-Faktur CV Sayovi Karyatama',
     'active' => 'Dashboard',
 ])
 

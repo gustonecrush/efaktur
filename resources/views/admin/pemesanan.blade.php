@@ -1,5 +1,5 @@
 @extends('admin.layouts.main', [
-    'title' => 'Manajemen Data Pemesanan CV Sayovi Karyatama',
+    'title' => 'Faktur Pajak | E-Faktur CV Sayovi Karyatama',
     'active' => 'Pemesanan',
 ])
 
@@ -99,7 +99,7 @@
                         <div class="flex justify-between px-6 -mb-px items-center gap-2">
                             <h3
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
-                                <i class='bx bxl-dropbox text-3xl'></i>Data
+                                <i class='bx bx-paper-plane text-3xl'></i>Faktur Pajak
                                 Barang CV
                                 Sayovi Karyatama
                             </h3>

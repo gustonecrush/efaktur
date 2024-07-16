@@ -1,5 +1,5 @@
 @extends('layouts.main', [
-    'title' => 'Login Mitra CV Sayovi Karyatama',
+    'title' => 'Login Admin | E-Faktur CV Sayovi Karyatama',
 ])
 
 @section('content')

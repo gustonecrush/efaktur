@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Admin::create([
-            'username' => 'marketing',
-            'email' => 'marketing@gmail.com',
-            'role' => 'Marketing',
-            'name' => 'Marketing',
-            'password' => Hash::make('marketing123')
+            'username' => 'direktur',
+            'email' => 'direktur@gmail.com',
+            'role' => 'Direktur',
+            'name' => 'Direktur',
+            'password' => Hash::make('direktur123')
         ]);
     }
 }

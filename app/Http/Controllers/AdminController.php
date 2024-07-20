@@ -30,7 +30,11 @@ class AdminController extends Controller
 
         if (Auth::guard('admin')->attempt($credentials)) {
             toast('Successfully logged in. Welcome to Dashboard E-Faktur CV Sayovi Karyatama.', 'success',);
-            return redirect()->route('admin.faktur');
+            if (Auth::guard('admin')->user()->role != 'Karyawan') {
+                return redirect()->route('admin.faktur');
+            } else {
+                return redirect()->route('admin.pengusaha');
+            }
         }
 
         toast('Failed to login, cannot find your account contact your operator!', 'error',);

@@ -58,17 +58,19 @@
             <div class="hidden bg-white md:block  md:border-b">
                 <div class="container mx-auto px-4">
                     <div class="md:flex">
+                        @if (Auth::guard('admin')->user()->role != 'Karyawan')
+                            <div class="flex -mb-px mr-8">
+                                <a href="{{ route('admin.faktur') }}"
+                                    class="no-underline text-primary opacity-50 md:text-grey-dark md:opacity-100 flex items-center py-4    hover:opacity-100 md:hover:border-grey-dark @if ($active == 'Faktur Pajak') border-b border-primary @endif">
+                                    <svg class="h-6 w-6 fill-current mr-2" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z"
+                                            fill-rule="nonzero" />
+                                    </svg> Faktur Pajak
+                                </a>
+                            </div>
+                        @endif
 
-                        <div class="flex -mb-px mr-8">
-                            <a href="{{ route('admin.faktur') }}"
-                                class="no-underline text-primary opacity-50 md:text-grey-dark md:opacity-100 flex items-center py-4    hover:opacity-100 md:hover:border-grey-dark @if ($active == 'Faktur Pajak') border-b border-primary @endif">
-                                <svg class="h-6 w-6 fill-current mr-2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path d="M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z"
-                                        fill-rule="nonzero" />
-                                </svg> Faktur Pajak
-                            </a>
-                        </div>
                         @if (Auth::guard('admin')->user()->role == 'Karyawan')
                             <div class="flex -mb-px mr-8">
                                 <a href="{{ route('admin.pengusaha') }}"

@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Admin::create([
             'username' => 'karyawan',
             'email' => 'karyawan@gmail.com',
-            'role' => 'karyawan',
+            'role' => 'Karyawan',
             'name' => 'Karyawan',
             'password' => Hash::make('karyawan123')
         ]);

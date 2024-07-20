@@ -74,13 +74,16 @@
                                 class="text-blue-dark py-4 flex justify-between px-6 -mb-px items-center gap-2 font-normal text-lg">
                                 <i class='bx bxs-briefcase-alt-2 text-3xl'></i> Data Faktur Pajak
                             </h3>
-                            <div class="flex">
-                                <button type="button" data-modal-target="add-faktur-modal"
-                                    data-modal-toggle="add-faktur-modal"
-                                    class="appearance-none py-2 px-3 duration-700 hover:bg-primary text-primary hover:text-white border rounded-lg border-primary hover:border-grey-dark ">
-                                    Tambah Data Faktur
-                                </button>
-                            </div>
+                            @if (Auth::guard('admin')->user()->role === 'Admin')
+                                <div class="flex">
+                                    <button type="button" data-modal-target="add-faktur-modal"
+                                        data-modal-toggle="add-faktur-modal"
+                                        class="appearance-none py-2 px-3 duration-700 hover:bg-primary text-primary hover:text-white border rounded-lg border-primary hover:border-grey-dark ">
+                                        Tambah Data Faktur
+                                    </button>
+                                </div>
+                            @endif()
+
                         </div>
                     </div>
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

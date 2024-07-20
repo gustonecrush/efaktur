@@ -69,7 +69,7 @@
                                 </svg> Faktur Pajak
                             </a>
                         </div>
-                        @if (Auth::guard('admin')->user()->role == 'Admin')
+                        @if (Auth::guard('admin')->user()->role == 'Karyawan')
                             <div class="flex -mb-px mr-8">
                                 <a href="{{ route('admin.pengusaha') }}"
                                     class="no-underline text-primary opacity-50 md:text-grey-dark md:opacity-100 flex items-center py-4 gap-2   hover:opacity-100 md:hover:border-grey-dark @if ($active == 'Pengusaha Kena Pajak') border-b border-primary @endif">

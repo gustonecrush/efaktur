@@ -30,5 +30,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Direktur',
             'password' => Hash::make('direktur123')
         ]);
+
+        \App\Models\Admin::create([
+            'username' => 'karyawan',
+            'email' => 'karyawan@gmail.com',
+            'role' => 'karyawan',
+            'name' => 'Karyawan',
+            'password' => Hash::make('karyawan123')
+        ]);
     }
 }

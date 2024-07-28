@@ -143,6 +143,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <input type="hidden" value="{{ $barang->id }}" name="id">
+                                            <input type="hidden" value="{{ $barang->total }}" name="total">
                                             <button type="submit"
                                                 class="font-medium text-red-600 dark:text-red-500 text-sm hover:underline">
                                                 <i class='bx bx-trash-alt'></i>Hapus

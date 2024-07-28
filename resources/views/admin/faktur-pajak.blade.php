@@ -128,21 +128,24 @@
                                             class="appearance-none py-2 px-3 duration-700 hover:bg-yellow-600 text-yellow-600 hover:text-white border rounded-lg border-yellow-600 hover:border-grey-dark ">
                                             Faktur
                                         </a>
-                                        <button type="button" data-modal-target="edit-faktur-modal-{{ $fakturPajak->id }}"
-                                            data-modal-toggle="edit-faktur-modal-{{ $fakturPajak->id }}"
-                                            class="appearance-none py-2 px-3 duration-700 hover:bg-green-600 text-green-600 hover:text-white border rounded-lg border-green-600 hover:border-grey-dark ">
-                                            Edit
-                                        </button>
-                                        <form action="{{ route('admin.faktur.destroy', $fakturPajak->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input type="hidden" name="id" value={{ $fakturPajak->id }}>
-                                            <button type="submit"
-                                                class="appearance-none py-2 px-3 duration-700 hover:bg-red-600 text-red-600 hover:text-white border rounded-lg border-red-600 hover:border-grey-dark ">
-                                                Hapus
+                                        @if (Auth::guard('admin')->user()->role != 'Direktur')
+                                            <button type="button"
+                                                data-modal-target="edit-faktur-modal-{{ $fakturPajak->id }}"
+                                                data-modal-toggle="edit-faktur-modal-{{ $fakturPajak->id }}"
+                                                class="appearance-none py-2 px-3 duration-700 hover:bg-green-600 text-green-600 hover:text-white border rounded-lg border-green-600 hover:border-grey-dark ">
+                                                Edit
                                             </button>
-                                        </form>
+                                            <form action="{{ route('admin.faktur.destroy', $fakturPajak->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="hidden" name="id" value={{ $fakturPajak->id }}>
+                                                <button type="submit"
+                                                    class="appearance-none py-2 px-3 duration-700 hover:bg-red-600 text-red-600 hover:text-white border rounded-lg border-red-600 hover:border-grey-dark ">
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        @endif
                                     </td>
                                 </tr>
 
@@ -255,29 +258,20 @@
                                                                 required>
                                                         </div>
                                                         <div>
-                                                            <label for="total_ppn"
-                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total
-                                                                PPN</label>
-                                                            <input type="number" id="total_ppn" name="total_ppn"
-                                                                value="{{ $fakturPajak->total_ppn }}"
-                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                                required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-2 gap-4">
-                                                        <div>
                                                             <label for="total_ppnbm"
-                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total
-                                                                PPnBM</label>
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PPnBM</label>
                                                             <input type="number" id="total_ppnbm" name="total_ppnbm"
                                                                 value="{{ $fakturPajak->total_ppnbm }}"
                                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                                                 required>
                                                         </div>
+                                                    </div>
+                                                    <div class=" gap-4">
+
                                                         <div>
                                                             <label for="location"
                                                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lokasi</label>
-                                                            <input type="number" id="location" name="location"
+                                                            <input type="text" id="location" name="location"
                                                                 value="{{ $fakturPajak->location }}"
                                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                                                 required>
@@ -358,7 +352,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class=" gap-4">
                             <div>
                                 <label for="no_seri_faktur"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Seri
@@ -367,62 +361,14 @@
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     required>
                             </div>
-                            <div>
-                                <label for="harga_jual"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga Jual</label>
-                                <input type="number" id="harga_jual" name="harga_jual"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
+
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label for="dikurangi_potongan_harga"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dikurangi Potongan
-                                    Harga</label>
-                                <input type="number" id="dikurangi_potongan_harga" name="dikurangi_potongan_harga"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="dikurangi_uang_muka"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dikurangi Uang
-                                    Muka</label>
-                                <input type="number" id="dikurangi_uang_muka" name="dikurangi_uang_muka"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label for="dasar_pengenaan_pajak"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dasar Pengenaan
-                                    Pajak</label>
-                                <input type="number" id="dasar_pengenaan_pajak" name="dasar_pengenaan_pajak"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="total_ppn"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total PPN</label>
-                                <input type="number" id="total_ppn" name="total_ppn"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label for="total_ppnbm"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total
-                                    PPnBM</label>
-                                <input type="number" id="total_ppnbm" name="total_ppnbm"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
+                        <div class="gap-4">
+
                             <div>
                                 <label for="location"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lokasi</label>
-                                <input type="number" id="location" name="location"
+                                <input type="text" id="location" name="location"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     required>
                             </div>

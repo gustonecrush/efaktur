@@ -101,15 +101,16 @@
                                         <td class="px-6 py-4 uppercase">{{ $barang->total }}</td>
                                         <td class="px-6 py-4 uppercase flex gap-2 h-full items-center">
 
-                                            <button type="button" data-modal-target="edit-faktur-modal-{{ $barang->id }}"
+                                            {{-- <button type="button" data-modal-target="edit-faktur-modal-{{ $barang->id }}"
                                                 data-modal-toggle="edit-faktur-modal-{{ $barang->id }}"
                                                 class="appearance-none py-2 px-3 duration-700 hover:bg-green-600 text-green-600 hover:text-white border rounded-lg border-green-600 hover:border-grey-dark ">
                                                 Edit
-                                            </button>
+                                            </button> --}}
                                             <form action="{{ route('admin.barang.destroy') }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input type="hidden" name="id" value={{ $barang->id }}>
+                                                <input type="hidden" name="total" value={{ $barang->total }}>
                                                 <input type="hidden" name="faktur_id" value={{ $fakturPajaks->id }}>
                                                 <button type="submit"
                                                     class="appearance-none py-2 px-3 duration-700 hover:bg-red-600 text-red-600 hover:text-white border rounded-lg border-red-600 hover:border-grey-dark ">
@@ -378,7 +379,7 @@
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex justify-end">
-                                                    Rp. {{ $barang->total }}
+                                                    Rp. {{ $fakturPajaks->harga_jual }}
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -398,7 +399,7 @@
                                                         Harga Jual/Penggantian</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-
+                                                        Rp. {{ $fakturPajaks->harga_jual }}
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -407,7 +408,7 @@
                                                         Dikurangi Potongan Harga</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-
+                                                        Rp. {{ $fakturPajaks->dikurangi_potongan_harga }}
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -416,7 +417,7 @@
                                                         Dikurangi Uang Muka</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-
+                                                        Rp. {{ $fakturPajaks->dikurangi_uang_muka }}
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -425,12 +426,9 @@
                                                         Dasar Pengenaan pajak</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-                                                        @php $total = 0 @endphp
-                                                        @foreach ($fakturPajaks->getBarangJasaKenaPajak as $barang)
-                                                            @php $total += $barang->harga_satuan @endphp
-                                                        @endforeach
+                                                        Rp. {{ $fakturPajaks->dasar_pengenaan_pajak }}
 
-                                                        Rp. @php echo($total * 3.5 /100 * 100) @endphp
+
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -439,12 +437,8 @@
                                                         Total PPN</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-                                                        @php $total = 0 @endphp
-                                                        @foreach ($fakturPajaks->getBarangJasaKenaPajak as $barang)
-                                                            @php $total += $barang->harga_satuan @endphp
-                                                        @endforeach
+                                                        Rp. {{ $fakturPajaks->total_ppn }}
 
-                                                        Rp. @php echo($total * 11 /100 * 100) @endphp
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -453,7 +447,7 @@
                                                         Total PPnBM (Pajak Penjual Barang Mewah)</td>
                                                     <td
                                                         class="px-6 py-4 text-sm text-gray-500 reak-words whitespace-normal">
-
+                                                        Rp. {{ $fakturPajaks->total_ppnbm }}
                                                     </td>
                                                 </tr>
                                             </tbody>

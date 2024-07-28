@@ -43,10 +43,11 @@ class BarangJasaKenaPajakController extends Controller
         $barang->kuantitas = $request->kuantitas;
         $barang->total = (int)$request->kuantitas * (int)$request->harga_satuan;
 
-        $faktur = FakturPajak::findOrFail($request->id);
+        $faktur = FakturPajak::where('id', '=', $request->id)->first();
 
         // Update the specific column
-        $faktur->harga_jual = (int)$request->total + (int)$faktur->harga_jual;
+        $faktur->harga_jual += (int)$request->kuantitas * (int)$request->harga_satuan;
+
         $faktur->save();
 
         $barang->save();
@@ -89,7 +90,7 @@ class BarangJasaKenaPajakController extends Controller
         $faktur = FakturPajak::findOrFail($request->faktur_id);
 
         // Update the specific column
-        $faktur->harga_jual = (int)$faktur->harga_jual - (int)$request->total;
+        $faktur->harga_jual -= (int)$request->total;
         $faktur->save();
         $pkp->delete();
 

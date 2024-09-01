@@ -76,7 +76,7 @@
                             <div class="flex">
                                 <button type="button" data-modal-target="add-pkp-modal" data-modal-toggle="add-pkp-modal"
                                     class="appearance-none py-2 px-3 duration-700 hover:bg-primary text-primary hover:text-white border rounded-lg border-primary hover:border-grey-dark ">
-                                    Tambah Data PBKP
+                                    Tambah Data PBKP (Pembeli Kena Pajak)
                                 </button>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-                        Tambah Data PBKP</h3>
+                        Tambah Data PBKP (Pembeli Kena Pajak)</h3>
                     <form class="space-y-6" action="{{ route('admin.pembeli.store') }}" method="POST">
                         @csrf
                         <div class="flex gap-2">
@@ -255,7 +255,7 @@
                         </div>
                         <button type="submit"
                             class="w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                            Tambah Data PBKP
+                            Tambah Data PBKP (Pembeli Kena Pajak)
                         </button>
                     </form>
                 </div>

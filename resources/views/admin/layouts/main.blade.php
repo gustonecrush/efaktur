@@ -17,6 +17,14 @@
 
     <title>{{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    </style>
 </head>
 
 <body>

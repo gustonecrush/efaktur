@@ -180,7 +180,7 @@
                                                                 Kena Pajak</label>
                                                             <select id="id_pengusaha_kena_pajak"
                                                                 name="id_pengusaha_kena_pajak"
-                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none">
                                                                 @foreach ($pengusahaKenaPajaks as $pengusaha)
                                                                     <option value="{{ $pengusaha->id }}"
                                                                         {{ $fakturPajak->id_pengusaha_kena_pajak == $pengusaha->id ? 'selected' : '' }}>
@@ -190,18 +190,21 @@
                                                         </div>
                                                         <div>
                                                             <label for="id_pembeli_kena_pajak"
-                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pembeli
-                                                                Kena Pajak</label>
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                                                Pembeli Kena Pajak
+                                                            </label>
                                                             <select id="id_pembeli_kena_pajak"
                                                                 name="id_pembeli_kena_pajak"
-                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none">
                                                                 @foreach ($pembeliKenaPajaks as $pembeli)
                                                                     <option value="{{ $pembeli->id }}"
                                                                         {{ $fakturPajak->id_pembeli_kena_pajak == $pembeli->id ? 'selected' : '' }}>
-                                                                        {{ $pembeli->nama }}</option>
+                                                                        {{ $pembeli->nama }}
+                                                                    </option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
+
                                                     </div>
                                                     <div class="grid grid-cols-2 gap-4">
                                                         <div>
@@ -332,7 +335,7 @@
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pengusaha Kena
                                     Pajak</label>
                                 <select id="id_pengusaha_kena_pajak" name="id_pengusaha_kena_pajak"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none">
                                     <option value="">Pilih Pengusaha Kena Pajak</option>
                                     @foreach ($pengusahaKenaPajaks as $pengusaha)
                                         <option value="{{ $pengusaha->id }}">{{ $pengusaha->nama }}</option>
@@ -344,7 +347,7 @@
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pembeli Kena
                                     Pajak</label>
                                 <select id="id_pembeli_kena_pajak" name="id_pembeli_kena_pajak"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 appearance-none">
                                     <option value="">Pilih Pembeli Kena Pajak</option>
                                     @foreach ($pembeliKenaPajaks as $pembeli)
                                         <option value="{{ $pembeli->id }}">{{ $pembeli->nama }}</option>

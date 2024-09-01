@@ -24,6 +24,10 @@
             -moz-appearance: none;
             appearance: none;
         }
+
+        select:not([size]) {
+            background-image: none;
+        }
     </style>
 </head>
 
